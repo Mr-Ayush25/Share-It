@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share-Karo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <div class="screen join-screen active">
+            <div class="form">
+                <h2>Share your files securely</h2>
+                <div class="form-input">
+                    <label for="join-id">
+                        <input type="text" id="join-id">
+                    </label>
+                </div>
+                <div class="form-input">
+                    <button id="receiver-start-con-btn">Connect</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="screen fs-screen">
+
+            <div class="files-list">
+                <div class="title">Shared File</div>
+                <!-- <div class="item">
+                    <div class="progress">0%</div>
+                    <div class="filename">Abc.txt</div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="receiver.js"></script>
+</body>
+
+</html>
