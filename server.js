@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { Server } from "socket.io";
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 // Configure Server Path name
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -13,9 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(join(__dirname + "/public")));
 
 // Getting the server instance from express.
-const expServer = app.listen(5000, () => {
-  //console.log("listening on http://localhost:5000");
-});
+const expServer = app.listen(PORT);
 //console.log(expServer);
 
 //! Using that Express server to Work With socket connection
