@@ -2,6 +2,8 @@ import express from "express";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { Server } from "socket.io";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,7 +16,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(join(__dirname + "/public")));
 
 // Getting the server instance from express.
-const expServer = app.listen(PORT);
+const expServer = app.listen(PORT, () => {
+  console.log("Server started " + PORT);
+});
 //console.log(expServer);
 
 //! Using that Express server to Work With socket connection
